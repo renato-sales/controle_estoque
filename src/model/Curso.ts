@@ -40,6 +40,5 @@ export class Curso {
     console.log("| Código do Produto: " + this._codigo);
     console.log("| Nome: " + this._nome);
     console.log("| Quantidade: " + this._preco);
-    console.log("======================================================");
   }
 }
