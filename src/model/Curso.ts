@@ -1,13 +1,11 @@
-export class Produto {
+export class Curso {
   private _codigo: number;
   private _nome: string;
-  private _quantidade: number;
   private _preco: number;
 
-  constructor(codigo: number, nome: string, quantidade: number, preco: number) {
+  constructor(codigo: number, nome: string, preco: number) {
     this._codigo = codigo;
     this._nome = nome;
-    this._quantidade = quantidade;
     this._preco = preco;
   }
 
@@ -27,14 +25,6 @@ export class Produto {
     this._nome = nome;
   }
 
-  public get quantidade() {
-    return this._quantidade;
-  }
-
-  public set quantidade(quantidade: number) {
-    this._quantidade = quantidade;
-  }
-
   public get preco() {
     return this._preco;
   }
@@ -45,11 +35,11 @@ export class Produto {
 
   public visualizar(): void {
     console.log("\n\n======================================================");
-    console.log("|              Informações do Produto:               |");
+    console.log("|              Informações do Curso:                 |");
     console.log("======================================================");
     console.log("| Código do Produto: " + this._codigo);
     console.log("| Nome: " + this._nome);
-    console.log("| Quantidade: " + this._quantidade);
+    console.log("| Quantidade: " + this._preco);
     console.log("======================================================");
   }
 }
