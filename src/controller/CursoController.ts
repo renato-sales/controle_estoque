@@ -40,7 +40,7 @@ export class CursoController implements CursoRepository {
         "\nO curso código: " + curso.codigo + " foi atualizado com sucesso!"
       );
     } else {
-      console.log("\nA Conta numero: " + curso.codigo + " não foi encontrada!");
+      console.log("\nO curso: " + curso.codigo + " não foi encontrado!");
     }
   }
 
