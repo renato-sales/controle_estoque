@@ -6,7 +6,7 @@ export class Programacao extends Curso {
   constructor(
     codigo: number,
     nome: string,
-    categoria: number,
+    categoria: string,
     preco: number,
     modulos: number
   ) {

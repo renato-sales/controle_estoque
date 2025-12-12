@@ -1,10 +1,10 @@
 export abstract class Curso {
   private _codigo: number;
   private _nome: string;
-  private _categoria: number;
+  private _categoria: string;
   private _preco: number;
 
-  constructor(codigo: number, nome: string, categoria: number, preco: number) {
+  constructor(codigo: number, nome: string, categoria: string, preco: number) {
     this._codigo = codigo;
     this._nome = nome;
     this._categoria = categoria;
@@ -31,7 +31,7 @@ export abstract class Curso {
     return this._categoria;
   }
 
-  public set categoria(categoria: number) {
+  public set categoria(categoria: string) {
     this._categoria = categoria;
   }
 

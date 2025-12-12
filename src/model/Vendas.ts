@@ -6,7 +6,7 @@ export class Vendas extends Curso {
   constructor(
     codigo: number,
     nome: string,
-    categoria: number,
+    categoria: string,
     preco: number,
     cargaHoraria: number
   ) {

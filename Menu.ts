@@ -1,14 +1,15 @@
 import readlinesync = require("readline-sync");
 import { CursoController } from "./src/controller/CursoController";
 import { Programacao } from "./src/model/Programacao";
+import { Vendas } from "./src/model/Vendas";
 
 export function main() {
   let cursos: CursoController = new CursoController();
 
-  let opcao, preco, categoria, modulos, codigo: number;
-  let nome: string;
+  let opcao, preco, categoria, modulos, codigo, cargaHoraria: number;
+  let nome, opcaoCategoria: string;
 
-  const categorias = ["Desenvolvimento de Software"];
+  const categorias = ["Desenvolvimento de Software", "Vendas"];
 
   while (true) {
     console.log("======================================================");
@@ -50,13 +51,38 @@ export function main() {
             console.log("Digite a quantidade de módulos do curso: ");
             modulos = readlinesync.questionInt("");
 
+            opcaoCategoria = "Desenvolvimento de Software";
+
             cursos.cadastrar(
               new Programacao(
                 cursos.getCodigo(),
                 nome,
-                categoria,
+                opcaoCategoria,
                 preco,
                 modulos
+              )
+            );
+            break;
+
+          case 2:
+            console.log("Digite o nome do  curso: ");
+            nome = readlinesync.question("");
+
+            console.log("Digite o preço do curso: ");
+            preco = readlinesync.questionFloat("");
+
+            console.log("Digite a carga horária do curso: ");
+            cargaHoraria = readlinesync.questionInt("");
+
+            opcaoCategoria = "Vendas";
+
+            cursos.cadastrar(
+              new Vendas(
+                cursos.getCodigo(),
+                nome,
+                opcaoCategoria,
+                preco,
+                cargaHoraria
               )
             );
             break;
@@ -115,10 +141,20 @@ export function main() {
 
             switch (categoria) {
               case 1:
+                opcaoCategoria = "Desenvolvimento de Software";
                 console.log("Digite a quantidade de módulos do curso: ");
                 modulos = readlinesync.questionInt("");
                 cursos.atualizar(
-                  new Programacao(codigo, nome, categoria, preco, modulos)
+                  new Programacao(codigo, nome, opcaoCategoria, preco, modulos)
+                );
+                break;
+
+              case 2:
+                opcaoCategoria = "Vendas";
+                console.log("Digite a carga horária do curso: ");
+                cargaHoraria = readlinesync.questionInt("");
+                cursos.atualizar(
+                  new Vendas(codigo, nome, opcaoCategoria, preco, cargaHoraria)
                 );
                 break;
             }
