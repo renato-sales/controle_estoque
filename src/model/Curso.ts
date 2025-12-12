@@ -1,11 +1,13 @@
 export abstract class Curso {
   private _codigo: number;
   private _nome: string;
+  private _categoria: number;
   private _preco: number;
 
-  constructor(codigo: number, nome: string, preco: number) {
+  constructor(codigo: number, nome: string, categoria: number, preco: number) {
     this._codigo = codigo;
     this._nome = nome;
+    this._categoria = categoria;
     this._preco = preco;
   }
 
@@ -25,6 +27,14 @@ export abstract class Curso {
     this._nome = nome;
   }
 
+  public get categoria() {
+    return this._categoria;
+  }
+
+  public set categoria(categoria: number) {
+    this._categoria = categoria;
+  }
+
   public get preco() {
     return this._preco;
   }
@@ -37,8 +47,9 @@ export abstract class Curso {
     console.log("\n\n======================================================");
     console.log("|              Informações do Curso:                 |");
     console.log("======================================================");
-    console.log("| Código do Produto: " + this._codigo);
+    console.log("| Código do Curso: " + this._codigo);
     console.log("| Nome: " + this._nome);
-    console.log("| Quantidade: " + this._preco);
+    console.log("| Categoria: " + this._categoria);
+    console.log("| Preço: " + this._preco);
   }
 }

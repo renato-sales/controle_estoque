@@ -1,10 +1,16 @@
 import { Curso } from "./Curso";
 
-export class Javascript extends Curso {
+export class Programacao extends Curso {
   private _modulos: number;
 
-  constructor(codigo: number, nome: string, preco: number, modulos: number) {
-    super(codigo, nome, preco);
+  constructor(
+    codigo: number,
+    nome: string,
+    categoria: number,
+    preco: number,
+    modulos: number
+  ) {
+    super(codigo, nome, categoria, preco);
     this._modulos = modulos;
   }
 
