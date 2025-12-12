@@ -1,4 +1,4 @@
-export class Curso {
+export abstract class Curso {
   private _codigo: number;
   private _nome: string;
   private _preco: number;

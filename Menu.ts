@@ -1,6 +1,4 @@
 import readlinesync = require("readline-sync");
-import { Curso } from "./src/model/Curso";
-import { Javascript } from "./src/model/JavaScript";
 
 export function main() {
   let opcao: number;
